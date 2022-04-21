@@ -1,0 +1,33 @@
+﻿version: '3.4'
+
+services:
+   whiscom.api:
+     container_name: whiscom_api
+     image: whiscom.api
+     restart: always
+     environment: 
+       - ASPNETCORE_ENVIRONMENT=Development
+       - ConnectionStrings_DefaultConnection=Server=192.168.100.119; Port=3306; Database=Whiscom_Staging;User=root;Password=humax2022@!;
+     build:
+       context: .
+       dockerfile: 21021992/whiscomapi:latest
+     ports: 
+       - "6661:6666"
+
+  # vinahr.sql:
+  #   container_name: vinahr_sql
+  #   image: mcr.microsoft.com/mssql/server:2019-latest
+  #   environment:
+  #     SA_PASSWORD: "w+IfO9FF5by1TlrouTx"
+  #     ACCEPT_EULA: "Y"
+  #   ports:
+  #  - "14331:1433"
+    # depends_on: 
+    #   - migrations
+  
+  # vinahr.migrations:
+  #   build:
+  #     context: .
+  #     dockerfile:
+
+ 

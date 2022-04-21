@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  whiscom.api:
+    image: ${DOCKER_REGISTRY-}whiscomapi
+    build:
+      context: .
+      dockerfile: Whiscom.API/Dockerfile
