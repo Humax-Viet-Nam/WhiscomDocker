@@ -2,15 +2,12 @@
 
 services:
    whiscom.api:
-     container_name: whiscom_api
-     image: whiscom.api
+     container_name: whiscom_api_manual
+     image: 21021992/whiscomapi:latest
      restart: always
      environment: 
        - ASPNETCORE_ENVIRONMENT=Development
        - ConnectionStrings_DefaultConnection=Server=192.168.100.119; Port=3306; Database=Whiscom_Staging;User=root;Password=humax2022@!;
-     build:
-       context: .
-       dockerfile: 21021992/whiscomapi:latest
      ports: 
        - "6661:6666"
 
